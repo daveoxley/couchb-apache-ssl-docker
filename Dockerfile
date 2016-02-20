@@ -6,7 +6,8 @@ RUN apt-get update && \
     couchdb apache2-utils && \
     rm -rf /var/lib/apt/lists/* && \
     sed -i '/port = /s/^;//g' /etc/couchdb/local.ini && \
-    sed -i '/bind_address = /s/^;//g' /etc/couchdb/local.ini
+    sed -i '/bind_address = /s/^;//g' /etc/couchdb/local.ini \
+    a2enmod authz_groupfile
 
 COPY default-proxy.conf /etc/apache2/proxy-conf/
 
