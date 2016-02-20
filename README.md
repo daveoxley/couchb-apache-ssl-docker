@@ -24,5 +24,5 @@ The container will create the databases under the conf directory in a subdirecto
 From within the conf directory run docker mounting the current dir as /conf and mapping port 443 to the host:
 
 ```bash
-$ docker run -it -e ACRA_PWD=123 -p 443:443 -v `pwd`:/conf -d daveoxley/couchdb-apache-proxy-ssl
+$ docker run -it -e COUCHDB_USER=admin -e COUCHDB_PWD=123 -p 443:443 -v `pwd`:/conf -d daveoxley/couchdb-apache-proxy-ssl
 ```
